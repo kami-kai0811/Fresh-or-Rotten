@@ -1,11 +1,13 @@
-{% extends "layout.html" %} {% block content %}
-<div class="container">
-  <div class="col content">
-    <h1>リンゴの画像をアップロードしてください</h1>
-    <form method="post" , enctype="multipart/form-data" , action="/result">
-      <input name="file" type="file" />
-      <input type="submit" , value="判定" />
-    </form>
-  </div>
+{% extends "layout.html" %}
+{% block content %}
+<div class="card text-center">
+  <h1>🍏 Apple Checker</h1>
+  <p class="description">画像をアップロードすると、リンゴが「食べ頃」か「傷んでいる」かを判定します。</p>
+  <form method="post" enctype="multipart/form-data" action="/result">
+    <div class="form-group">
+      <input type="file" name="file" class="form-control-file mb-3" required>
+    </div>
+    <button type="submit" class="btn btn-success btn-block">🍎 判定する</button>
+  </form>
 </div>
 {% endblock %}
